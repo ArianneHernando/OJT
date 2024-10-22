@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
             <a href="#">Education</a>
         </nav>
 
-        <a href="#" class="contact">Contact Me</a>
+        <a href="#" class="contact">Contact Me</a> 
     </header>
 
     <section class="home">
@@ -59,7 +59,7 @@
     <section class="contact-form">
         <h2 class="contact-me">Contact <span>Me</span></h2>
 
-        <!-- <form action="#" class="action">
+        <form action="#" class="action">
             <div class="input-box">
                 <input type="text" placeholder="Full Name" required>
                 <input type="email"
@@ -75,24 +75,8 @@
 
             <textarea name="" id="" cols="30"
             rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn-1">
-        </form> -->
-
-        <form action="#" class="action" id="contactForm"> <!-- Added ID for JS reference -->
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-        
-            <div class="input-box">
-                <input type="number" name="phone" placeholder="Phone Number" required>
-                <input type="text" name="subject" placeholder="Subject" required>
-            </div>
-        
-            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn-1">
+            <input type="submit" value="Send Message" id="btnSubmit" class="btn-1">
         </form>
-        
     </section>
 
     <footer class="footer">
@@ -124,22 +108,105 @@
 
         <p class="copyright">0 2024 Arianne | All Rigths Reserved</p>
     </footer>
+</body>
+</html>
+<script src="./script.js">
+</script> -->
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault(); // Prevent default form submission
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            const response = await fetch('http://localhost:5000/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-            const result = await response.json();
-            alert(result.message);
-        });
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><span>Arianne</span></a>
+
+        <nav class="navbar">
+            <a href="#" class="active">Portfolio</a>
+            <a href="#">Home</a>
+            <a href="#">Skills</a>
+            <a href="#">Project</a>
+            <a href="#">Education</a>
+        </nav>
+
+        <button id="btnContact" class="contact">Contact Me</button>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h3>Hi</h3>
+
+            <h1>
+                I'm Arianne <br />a Software Developer
+            </h1>
+
+            <p>My name is Arianne Joy P. Hernando currently taking a Bachelor of Science in Information System in AMA College, Graduating Student.</p>
+
+            <div class="btn-box">
+                <button id="btnHireMe" class="btn-1">Hire Me</button>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="samplepic.webp" alt="Arianne Picture">
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-img">
+            <img src="samplepic.webp" alt="About Arianne">
+        </div>
+
+        <div class="about-content">
+            <h2 class="class">About <span>Me </span></h2>
+            <h3>Software <span>Developer</span></h3>
+            <p>put your skills</p>
+            <a href="#" class="btn-2">Experience</a>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2 class="contact-me">Contact <span>Me</span></h2>
+
+        <form action="#" class="action" id="contactForm">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-box">
+                <input type="number" placeholder="Phone Number" required>
+                <input type="text" placeholder="Subject">
+            </div>
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" id="btnSendMessage" class="btn-1">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class='bx bxl-html5'></i></a>
+            <a href="#"><i class='bx bxl-java'></i></a>
+            <a href="#"><i class='bx bxl-visual-studio'></i></a>
+            <a href="#"><i class='bx bxl-figma'></i></a>
+        </div>
+
+        <ul class="list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+
+        <p class="copyright">0 2024 Arianne | All Rights Reserved</p>
+    </footer>
+    <script src="script.js" defer></script>
+
 </body>
 </html>
