@@ -38,14 +38,14 @@
              </div>
         </div>
         <div class="img-box">
-            <img src="samplepic.webp" alt="">
+            <img src="samplepic.webp" alt="Arianne Picture">
          </div>
     </section>
 
     <section class="about">
 
         <div class="about-img">
-            <img src="samplepic.webp" alt="">
+            <img src="samplepic.webp" alt="About Arianne">
         </div>
 
         <div class="about-content">
@@ -59,16 +59,16 @@
     <section class="contact-form">
         <h2 class="contact-me">Contact <span>Me</span></h2>
 
-        <form action="#" class="action">
+        <!-- <form action="#" class="action">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder="Full Name" required>
                 <input type="email"
-                placeholder="Email">
+                placeholder="Email" required>
             </div>
 
             <div class="input-box">
                 <input type="number"
-                placeholder="Phone Number">
+                placeholder="Phone Number" required>
                 <input type="text"
                 placeholder="Subject">
             </div>
@@ -76,13 +76,29 @@
             <textarea name="" id="" cols="30"
             rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send Message" class="btn-1">
+        </form> -->
+
+        <form action="#" class="action" id="contactForm"> <!-- Added ID for JS reference -->
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+        
+            <div class="input-box">
+                <input type="number" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+        
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn-1">
         </form>
+        
     </section>
 
     <footer class="footer">
 
         <div class="social">
-            <a href=""><i class='bx bxl-html5'></i></a>
+            <a href="#"><i class='bx bxl-html5'></i></a>
             <a href="#"><i class='bx bxl-java' ></i></a>
             <a href="#"><i class='bx bxl-visual-studio' ></i></a>
             <a href="#"><i class='bx bxl-figma' ></i></a>
@@ -112,10 +128,8 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault(); // Prevent default form submission
-        
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
-        
             const response = await fetch('http://localhost:5000/api/contact', {
                 method: 'POST',
                 headers: {
@@ -123,11 +137,9 @@
                 },
                 body: JSON.stringify(data)
             });
-        
             const result = await response.json();
             alert(result.message);
         });
-        </script>
-        
+    </script>
 </body>
 </html>
